@@ -1,4 +1,249 @@
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<title>anzhuo云盘</title>
-<h2 style="color:red">大家好，由于内网穿透/服务器的问题，我们将停止这个域名，请各位使用以下域名访问！<br>
-<h2 style="color:red">https://15be8944.r1.cpolar.top/<br>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>anzhuo云盘</title>
+     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+    body {
+       
+        font-family: 'Monospace', sans-serif;
+        color: #fff;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 1s ease-out;
+        overflow: hidden;
+        background: #000;
+    }
+    .container {
+        text-align: center;
+        padding: 20px;
+        background-color: #2f2f2f;
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        transition: 1s ease-out;
+        position: relative; 
+        z-index: 1;
+    }
+    h1 {
+        font-size: 32px;
+        color: #00ff7f;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: 1s ease-out;
+    }
+    .description {
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 1.6;
+        color: #bbb;
+        transition: 1s ease-out;
+    }
+    .download-button {
+        display: inline-block;
+        background: linear-gradient(to right, #00ff7f, #00c88c);
+        color: black;
+        padding: 15px 30px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        transition-duration: 0.4s;
+        margin-top: 30px;
+        box-shadow: 0 4px 8px rgba(0, 255, 127, 0.2);
+        margin: 10px;
+    }
+    .download-button:hover {
+        box-shadow: 0 4px 15px rgba(0, 255, 127, 0.4);
+        transform: scale(1.05);
+    }
+    .container img {
+        width: 150px;
+        height: 150px;
+        margin-top: 20px;
+        animation: spin 2s linear infinite;
+    }
+    .button-group {
+        display: flex;
+        justify-content: center;
+    }
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+  
+    </style>
+ 
+</head>
+<body>
+    
+     <div id="particles-js"><canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="1148" height="899"></canvas></div>
+    <div class="container">
+        <img src="images/logo.png" alt="App Logo">
+        <h1>anzhuo云盘</h1>
+        <p class="description"></p>
+        <div class="button-group">
+           <a href="https://15be8944.r1.cpolar.top/home">
+    <button>点我跳转</button>
+</a>
+
+
+        </div>
+        
+
+    </div>
+
+    <script>
+    window.onload = function() {
+    updateDownloadCount('android');
+    updateDownloadCount('pc');
+}
+
+particlesJS("particles-js", {
+  particles: {
+    number: {
+      value: 50,
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    },
+    color: {
+      value: "#00ff7f"
+    },
+    shape: {
+      type: "circle",
+      stroke: {
+        width: 0,
+        color: "#000000"
+      },
+      polygon: {
+        nb_sides: 5
+      }
+    },
+    opacity: {
+      value: 0.5,
+      random: false,
+      anim: {
+        enable: false,
+        speed: 1,
+        opacity_min: 0.1,
+        sync: false
+      }
+    },
+    size: {
+      value: 5,
+      random: true,
+      anim: {
+        enable: false,
+        speed: 40,
+        size_min: 0.1,
+        sync: false
+      }
+    },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#00ff7f",
+      opacity: 0.4,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 6,
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "out",
+      bounce: false,
+      attract: {
+        enable: false,
+        rotateX: 600,
+        rotateY: 1200
+      }
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: {
+        enable: false,
+        mode: "repulse"
+      },
+      onclick: {
+        enable: false,
+        mode: "push"
+      },
+      resize: true
+    },
+    modes: {
+      grab: {
+        distance: 400,
+        line_linked: {
+          opacity: 1
+        }
+      },
+      bubble: {
+        distance: 400,
+        size: 40,
+        duration: 2,
+        opacity: 8,
+        speed: 3
+      },
+      repulse: {
+        distance: 200,
+        duration: 0.4
+      },
+      push: {
+        particles_nb: 4
+      },
+      remove: {
+        particles_nb: 2
+      }
+    }
+  },
+  retina_detect: true
+});
+                  
+function updateDownloadCount(platform) {
+    fetch('https://zhildc.top/lj.php?platform=' + platform)
+        .then(response => response.text())
+        .then((count) => {
+            document.getElementById(platform + "-download-count").innerText = count;
+        });
+}
+
+function downloadFile(platform) {
+    var link = document.createElement('a');
+    //根据不同的平台下载不同的安装包
+    if(platform == 'android'){
+        link.href = '智联AI.apk'; //安卓安装包的路径
+        link.download = '智联AI.apk';
+    }else if(platform == 'pc'){
+        link.href = '智联AI.exe'; //PC安装包的路径
+        link.download = '智联AI.exe';
+    }
+    link.click();
+
+    fetch('https://zhildc.top/lj.php?platform=' + platform + '&update=true')
+        .then(response => response.text())
+        .then((count) => {
+            document.getElementById(platform + "-download-count").innerText = count;
+        });
+}
+
+    </script>
+  
+
+
+<webchatgpt-custom-element-841732f9-15ab-468e-9493-3a14d75362a8 id="webchatgpt-snackbar" style="color: rgb(255, 255, 255);"></webchatgpt-custom-element-841732f9-15ab-468e-9493-3a14d75362a8></body></html>
