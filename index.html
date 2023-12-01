@@ -244,6 +244,36 @@ function downloadFile(platform) {
 
     </script>
   
+<script src="https://cdn.bootcss.com/sweetalert/2.1.0/sweetalert.min.js"></script>
 
+<script>
+
+swal('停止公告','\n\nanzhuo云盘将停止一段时间，恢复时间待定','success'); function AddFavorite(title, url) {
+
+  try {
+
+      window.external.addFavorite(url, title);
+
+  }
+
+catch (e) {
+
+     try {
+
+       window.sidebar.addPanel(title, url,);
+
+    }
+
+     catch (e) {
+
+         alert("抱歉，您所使用的浏览器无法完成此操作。");
+
+     }
+
+  }
+
+}
+
+</script>
 
 <webchatgpt-custom-element-841732f9-15ab-468e-9493-3a14d75362a8 id="webchatgpt-snackbar" style="color: rgb(255, 255, 255);"></webchatgpt-custom-element-841732f9-15ab-468e-9493-3a14d75362a8></body></html>
